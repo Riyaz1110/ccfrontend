@@ -247,7 +247,29 @@ export default function AdminDashboard() {
                       </div>
                     ))}
                     {order.transaction_id && <p style={{ fontSize: '0.75rem', color: 'var(--mink)', marginTop: '8px' }}>TxnID: <strong>{order.transaction_id}</strong></p>}
-                  </div>
+                    {/* Add this after transaction_id display in the orders map */}
+{order.payment_screenshot && (
+  <div style={{ marginTop: '12px' }}>
+    <p style={{ fontSize: '0.75rem', color: 'var(--mink)', marginBottom: '6px', fontWeight: 500 }}>
+      📸 Payment Screenshot:
+    </p>
+    <img
+      src={`data:${order.screenshot_mimetype || 'image/jpeg'};base64,${order.payment_screenshot}`}
+      alt="Payment proof"
+      style={{
+        maxWidth: '200px',
+        maxHeight: '200px',
+        borderRadius: '8px',
+        objectFit: 'contain',
+        border: '1px solid var(--cloud)',
+        cursor: 'pointer'
+      }}
+      onClick={() => window.open(`data:${order.screenshot_mimetype || 'image/jpeg'};base64,${order.payment_screenshot}`, '_blank')}
+      title="Click to view full screenshot"
+        />
+      </div>
+    )}
+                      </div>
                 ))}
                 {orders.length === 0 && <div style={{ textAlign: 'center', padding: '60px', color: 'var(--mink)' }}>No orders yet</div>}
               </div>
