@@ -8,7 +8,7 @@ import QRCode from 'qrcode';
 const UPI_ID = 'nishu01suba-1@okhdfcbank';
 
 export default function Checkout() {
-  const { cart, cartTotal, clearCart } = useCart();
+const { cart, cartTotal, cartSubtotal, clearCart } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
   const [step, setStep] = useState(1); // 1: shipping, 2: payment, 3: success
@@ -330,14 +330,16 @@ export default function Checkout() {
                 <span style={{ whiteSpace: 'nowrap', fontWeight: 500 }}>₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
               </div>
             ))}
-            <div style={{ borderTop: '1px solid var(--cloud)', marginTop: '12px', paddingTop: '12px', display: 'flex', justifyContent: 'space-between', fontSize: '0.82rem', color: 'var(--mink)', marginBottom: '8px' }}>
-              <span>Shipping</span>
-              <span style={{ color: '#22c55e', fontWeight: 500 }}>Free</span>
-            </div>
-            <div style={{ borderTop: '2px solid var(--cloud)', paddingTop: '14px', display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 600 }}>
-              <span>Total</span>
-              <span style={{ color: 'var(--rose-dark)' }}>₹{cartTotal.toLocaleString('en-IN')}</span>
-            </div>
+            <div style={{ borderTop: '1px solid var(--cloud)', margin: '16px 0 12px', paddingTop: '16px' }}>
+  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '8px', color: 'var(--mink)' }}>
+    <span>Subtotal</span>
+    <span>₹{cartSubtotal.toLocaleString('en-IN')}</span>
+  </div>
+  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '8px', color: 'var(--mink)' }}>
+    <span>🚚 Shipping</span>
+    <span style={{ fontWeight: 500, color: 'var(--espresso)' }}>₹50</span>
+  </div>
+</div>
           </div>
         </div>
       </div>

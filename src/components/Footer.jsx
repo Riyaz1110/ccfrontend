@@ -18,9 +18,9 @@ export default function Footer() {
             <p style={{ fontSize: '0.8rem', opacity: 0.7, lineHeight: 1.7, color: 'var(--gold-light)' }}>
               Luxury that fits your budget
             </p>
-            <p style={{ fontSize: '0.8rem', opacity: 0.6, marginTop: '8px' }}>
+            {/* <p style={{ fontSize: '0.8rem', opacity: 0.6, marginTop: '8px' }}>
               ✉ Orders via DM &nbsp;|&nbsp; 🚚 Ships Everywhere
-            </p>
+            </p> */}
           </div>
 
           {/* Shop */}
@@ -62,13 +62,13 @@ export default function Footer() {
               Info
             </h4>
             <p style={{ fontSize: '0.85rem', opacity: 0.7, marginBottom: '8px' }}>📍 Ships All Over India</p>
-            <p style={{ fontSize: '0.85rem', opacity: 0.7, marginBottom: '8px' }}>💬 Orders via DM only</p>
+            {/* <p style={{ fontSize: '0.85rem', opacity: 0.7, marginBottom: '8px' }}>💬 Orders via DM only</p> */}
             <p style={{ fontSize: '0.85rem', opacity: 0.7 }}>💳 UPI Payment accepted</p>
           </div>
         </div>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-          <p style={{ fontSize: '0.78rem', opacity: 0.5 }}>© 2024 Cloudy Clutches. All rights reserved.</p>
+          <p style={{ fontSize: '0.78rem', opacity: 0.5 }}>© 2026 Cloudy Clutches. All rights reserved.</p>
           <p style={{ fontSize: '0.78rem', opacity: 0.5 }}>Made by <span style={{ color: 'var(--gold)', opacity: 1 }}>WebWorks Private Limited</span></p>
         </div>
       </div>

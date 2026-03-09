@@ -3,10 +3,9 @@ import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 
 export default function Cart() {
-  const { cart, updateQuantity, removeFromCart, cartTotal } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
-
+  const { cart, updateQuantity, removeFromCart, cartTotal, cartSubtotal } = useCart();
   if (!user) {
     return (
       <div className="page-wrapper">
@@ -97,13 +96,17 @@ export default function Cart() {
             ))}
 
             <div style={{ borderTop: '1px solid var(--cloud)', margin: '16px 0 12px', paddingTop: '16px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '8px', color: 'var(--mink)' }}>
+              {/* <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '8px', color: 'var(--mink)' }}>
                 <span>Subtotal</span>
                 <span>₹{cartTotal.toLocaleString('en-IN')}</span>
+              </div> */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '8px', color: 'var(--mink)' }}>
+                <span>Subtotal</span>
+                <span>₹{cartSubtotal.toLocaleString('en-IN')}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '8px', color: 'var(--mink)' }}>
-                <span>Shipping</span>
-                <span style={{ color: '#22c55e' }}>Free</span>
+                <span>🚚 Shipping</span>
+                <span style={{ color: 'var(--espresso)', fontWeight: 500 }}>₹50</span>
               </div>
             </div>
 

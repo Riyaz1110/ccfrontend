@@ -63,7 +63,7 @@ export default function Home() {
               </Link>
             </div>
             <div style={{ display: 'flex', gap: '40px', marginTop: '48px' }}>
-              {[['100+', 'Products'], ['Free', 'Shipping*'], ['UPI', 'Payment']].map(([val, label]) => (
+              {[['100+', 'Products'], ['UPI', 'Payment']].map(([val, label]) => (
                 <div key={label}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 600, color: 'var(--espresso)' }}>{val}</div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--mink)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{label}</div>
@@ -131,7 +131,7 @@ export default function Home() {
       <section style={{ background: 'var(--espresso)', padding: '60px 0', textAlign: 'center' }}>
         <div className="container">
           <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: 'var(--cream)', marginBottom: '16px', fontWeight: 300 }}>
-            🚚 We ship <em style={{ color: 'var(--blush)' }}>all over India</em> — orders via DM
+            🚚 We ship <em style={{ color: 'var(--blush)' }}>all over India</em>
           </p>
           <p style={{ color: 'rgba(250,247,242,0.7)', marginBottom: '28px', fontSize: '0.95rem' }}>
             Place your order, make a UPI payment, and we'll handle the rest!
