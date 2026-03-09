@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import QRCode from 'qrcode';
 
-const UPI_ID = 'nishu01suba-2@okhdfcbank';
+const UPI_ID = 'nishu01suba-1@okhdfcbank';
 
 export default function Checkout() {
   const { cart, cartTotal, clearCart } = useCart();
