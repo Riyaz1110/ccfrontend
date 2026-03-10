@@ -111,7 +111,7 @@ export default function ProductDetail() {
 
             {/* Features */}
             <div style={{ marginTop: '32px', padding: '20px', background: 'var(--warm-white)', borderRadius: 'var(--radius-lg)', display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-              {[['🚚', 'Ships All Over'], ['✨', 'Handcrafted'], ['💬', 'Order via DM']].map(([icon, text]) => (
+              {[['🚚', 'Ships All Over'], ['✨', 'Handcrafted']].map(([icon, text]) => (
                 <div key={text} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.8rem', color: 'var(--mink)' }}>
                   <span>{icon}</span><span>{text}</span>
                 </div>

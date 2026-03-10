@@ -222,7 +222,13 @@ export default function AdminDashboard() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '12px' }}>
                       <div>
                         <p style={{ fontWeight: 600, marginBottom: '2px' }}>Order #{order.id}</p>
-                        <p style={{ fontSize: '0.8rem', color: 'var(--mink)' }}>{order.user_name} • {order.user_email}</p>
+                        <p style={{ fontSize: '0.8rem', color: 'var(--mink)' }}>
+                        {order.user_name} • {order.user_email}
+                        </p>
+
+                        <p style={{ fontSize: '0.8rem', color: 'var(--mink)' }}>
+                        📞 {order.mobile_number}
+                        </p>
                         <p style={{ fontSize: '0.78rem', color: 'var(--mink)' }}>{new Date(order.created_at).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
                       </div>
                       <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>

@@ -13,6 +13,7 @@ const { cart, cartTotal, cartSubtotal, clearCart } = useCart();
   const navigate = useNavigate();
   const [step, setStep] = useState(1); // 1: shipping, 2: payment, 3: success
   const [shippingAddress, setShippingAddress] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
   const [transactionId, setTransactionId] = useState('');
   const [screenshot, setScreenshot] = useState(null);
   const [screenshotPreview, setScreenshotPreview] = useState('');
@@ -86,6 +87,7 @@ const { cart, cartTotal, cartSubtotal, clearCart } = useCart();
       formData.append('total_amount', cartTotal);
       formData.append('transaction_id', transactionId.trim());
       formData.append('shipping_address', shippingAddress);
+      formData.append('mobile_number', mobileNumber);
       formData.append('payment_screenshot', screenshot);
 
       const res = await api.post('/api/orders', formData, {
@@ -170,6 +172,16 @@ const { cart, cartTotal, cartSubtotal, clearCart } = useCart();
                 <input type="email" value={user?.email || ''} readOnly className="form-input" style={{ background: '#f9f9f9' }} />
               </div>
               <div className="form-group">
+              <label className="form-label">Mobile Number *</label>
+              <input
+                type="tel"
+                value={mobileNumber}
+                onChange={e => setMobileNumber(e.target.value)}
+                className="form-input"
+                placeholder="Enter mobile number"
+              />
+            </div>
+              <div className="form-group">
                 <label className="form-label">Shipping Address *</label>
                 <textarea
                   value={shippingAddress}
@@ -184,7 +196,15 @@ const { cart, cartTotal, cartSubtotal, clearCart } = useCart();
               <button
                 className="btn-primary"
                 onClick={() => {
-                  if (!shippingAddress.trim()) { setError('Please enter shipping address'); return; }
+                  if (!shippingAddress.trim()) {
+                    setError('Please enter shipping address');
+                    return;
+                  }
+
+                  if (!mobileNumber.trim()) {
+                    setError('Please enter mobile number');
+                    return;
+                  }
                   setError(''); setStep(2);
                 }}
                 style={{ width: '100%', justifyContent: 'center', padding: '14px' }}
